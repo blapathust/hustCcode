@@ -10,11 +10,13 @@ typedef struct plate {
 
 plate* top;
 
-void push() {
+void push(int value) {
 
     if (top == NULL) return;
 
     plate* newPlate = (plate*) malloc(sizeof(plate));
+
+    newPlate->val = value;
 
     newPlate->next = top;
 
