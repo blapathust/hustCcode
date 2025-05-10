@@ -17,7 +17,6 @@ void push(int value) {
     plate* newPlate = (plate*) malloc(sizeof(plate));
 
     newPlate->val = value;
-
     newPlate->next = top;
 
     top = newPlate;
