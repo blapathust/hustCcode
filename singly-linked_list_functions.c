@@ -86,7 +86,5 @@ node* reverse(node* curr, node* currHead) {
 
 int main() {
 
-
-
     return 0;
 }
