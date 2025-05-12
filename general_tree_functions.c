@@ -22,7 +22,7 @@ node* dfs(node* curr, int value) {
 
     if (curr->leftmostChild != NULL) {
 
-        target = dfs(curr->rightSibling, value);
+        target = dfs(curr->leftmostChild, value);
 
         if (target != NULL) return target;
     }
