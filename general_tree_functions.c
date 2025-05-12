@@ -30,12 +30,12 @@ node* dfs(node* curr, int value) {
     return dfs(curr->rightSibling, value);
 }
 
-node* create(int value, node* father) {
+node* create(int value) {
 
     node* created = (node*) malloc((sizeof(node)));
 
     created->val = value;
-    created->parent = father;
+    created->parent = NULL;
     created->leftmostChild = NULL;
     created->rightSibling = NULL;
     
@@ -48,12 +48,9 @@ node* add(int target, int value) {
 
     if (father == NULL) return NULL;
 
-    node* created = (node*) malloc(sizeof(node));
+    node* created = create(value);
 
-    created->val = value;
     created->parent = father;
-    created->leftmostChild = NULL;
-    created->rightSibling = NULL;
 
     if (father->leftmostChild == NULL) father->leftmostChild = created;
     else {
