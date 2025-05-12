@@ -30,6 +30,18 @@ node* dfs(node* curr, int value) {
     return dfs(curr->rightSibling, value);
 }
 
+node* create(int value, node* father) {
+
+    node* created = (node*) malloc((sizeof(node)));
+
+    created->val = value;
+    created->parent = father;
+    created->leftmostChild = NULL;
+    created->rightSibling = NULL;
+    
+    return created;
+}
+
 node* add(int target, int value) {
 
     node* father = dfs(root, target);
